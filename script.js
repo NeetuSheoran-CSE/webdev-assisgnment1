@@ -54,3 +54,31 @@ eventForm.addEventListener("submit",(event)=>{
     }
     addEvent(eventData);
 });
+
+clearAllBtn.addEventListener("click",()=>{
+    eventContainer.innerHTML=`
+    <div class="empty-state">No events yet. Add
+    your first event!</div>`
+})
+
+addSampleBtn.addEventListener("click",()=>{
+    sampleEvents.forEach(addEvent);
+})
+
+eventContainer.addEventListener("click",(event)=>{
+    //closesr use to target the closestchild element of the targeted element
+    const card=event.target.closest('.event-card');//event-card
+    console.log(card,"inside line 73");
+
+    if(event.target.classList.contains("delete-btn")){
+        card.remove();}
+
+        if(!eventContainer.querySelector(".event-card")){
+            eventConatiner.innerHTML=`
+            <div class="empty-state">No events yet. Add
+            your first event!</div>`
+        }
+
+})
+
+
