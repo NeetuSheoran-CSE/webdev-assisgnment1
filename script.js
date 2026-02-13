@@ -24,6 +24,7 @@ const sampleEvents=[
 ];
 function createEventCard(eventData){
    const card=document.createElement("div");
+   card.classList.add("event-card");
 
    card.innerHTML=`
    <button class="delete-btn">X</button>
@@ -37,8 +38,8 @@ function createEventCard(eventData){
 }
 function addEvent(eventData){
     const emptyState=document.querySelector(".empty-state");
-    emptyState.remove();
-
+    if(emptyState) emptyState.remove();
+    
 
     eventContainer.appendChild(createEventCard(eventData));
 }
@@ -53,6 +54,7 @@ eventForm.addEventListener("submit",(event)=>{
         description:eventDescription.value
     }
     addEvent(eventData);
+    eventForm.reset();
 });
 
 clearAllBtn.addEventListener("click",()=>{
@@ -74,11 +76,28 @@ eventContainer.addEventListener("click",(event)=>{
         card.remove();}
 
         if(!eventContainer.querySelector(".event-card")){
-            eventConatiner.innerHTML=`
+            eventContainer.innerHTML=`
             <div class="empty-state">No events yet. Add
             your first event!</div>`
         }
 
 })
+addSampleBtn.addEventListener("click", () => {
+    sampleEvents.forEach(event => {
+        addEvent(event);
+    });
+});
+
+// ===== DOM Key Press Demo =====
+
+document.addEventListener("keydown", (event) => {
+
+    // If key is space, show "Space"
+    const keyPressed = event.key === " " ? "Space" : event.key;
+
+    demoContent.innerHTML = `
+        <strong>Key Pressed:</strong> ${keyPressed} <br>
+    `;
+});
 
 

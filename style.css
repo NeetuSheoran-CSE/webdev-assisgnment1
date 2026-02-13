@@ -3,22 +3,40 @@
     padding: 0;
     box-sizing: border-box;
 }
+h1{
+    color: rgb(246, 246, 250);
+    text-align: center;
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+     background: linear-gradient(135deg, #a7a8ff, #63b3ed)
+}
+h2{
+    color: rgb(79, 79, 233);
+    padding-bottom: 15px;
+}
 .container{
     display: flex; 
     flex-wrap: wrap;
     flex-direction: row; 
     align-items: center; 
-    gap: 20px; padding: 20px; }
+    gap: 20px; padding: 20px;
+    justify-content: center;
+    background: linear-gradient(135deg, #a7a8ff, #63b3ed);}
 
 
 .dashboard-container {
-    height: 450px;
+    height: 470px;
     width: 330px;
     border-radius: 20px;
     font-family:Arial, Helvetica, sans-serif;
-    background-color: aliceblue;
+    background-color: rgb(246, 247, 247);
     padding: 20px;
+    transform: 0.2s;
 
+}
+.dashboard-container:hover{
+    transform: scale(1.05);
+    box-shadow: #7f9cf5 ;
 }
 
 input, select, textarea {
@@ -30,37 +48,70 @@ input, select, textarea {
 
 }
 button{
-padding: 10px 20px; 
-background-color: rgb(84, 84, 241); 
+padding: 10px 20px ; 
+background: linear-gradient(135deg, #8c8ed1, #4ea9eb); 
 color: white; 
 border: none; 
 border-radius: 5px; 
 cursor: pointer;
+transform: 0.2s;
  }
+button:hover {
+    background-color: rgb(63, 63, 241);
+    transform: scale(1.05);
+    box-shadow: #7f9cf5 ;
+}
+
 #submit{
 height: 35px;
 width: 100%;
 }
 
-h2{
-    color: rgb(84, 84, 241);
-}
+
 .events-container {
-    height: 400px;
+    height: 470px;
     width: 500px;
     border-radius: 20px;
     font-family:Arial, Helvetica, sans-serif;
-    background-color: aliceblue;
+    background-color: rgb(251, 252, 253);
+    padding: 20px;
+    margin: 20px;
+    gap: 20px;
+    transition: transform 0.2s;
+}
+.empty-state{
+    padding: 50px;
+}
+.events-container:hover{
+    transform: scale(1.05);
+    box-shadow: #7f9cf5 ;
 }
 
 #clearAllBtn,#addSampleBtn{
 height: 35px; width: 48%; }
 
 .dom-demo-container {
-    height: 200px;
-    width: 620px;
+    height: 150px;
+    width: 920px;
     border-radius: 20px;
     font-family:Arial, Helvetica, sans-serif;
-    background-color: aliceblue;
+    background-color: rgb(253, 254, 254);
     margin-top: 20px;
+    padding: 20px;
+    margin: 20px;
+    transform: 0.2s;
+}
+.dom-demo-container:hover{
+    transform: scale(1.05);
+    box-shadow: #7f9cf5 ;
+}
+
+#demoContent {
+    height: 45px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: white;
 }
